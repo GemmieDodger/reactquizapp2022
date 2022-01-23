@@ -8,13 +8,14 @@ import { useAuth } from "../authProvider";
 import { useParams } from "react-router-dom";
 
 const EditQuiz = (props) => {
-  const { user, loading, logout } = useAuth();
-  const { id, quizName } = useParams();
+  const { user, loading } = useAuth();
+  const { id, quizname } = useParams();
+
   if (!loading) {
   return (
     <>
       <Header user={user} />
-      <SubHeader quizName={quizName} />
+      <SubHeader quizName={quizname} />
       <EditQuestions id={id} />
       <AddQuestion id={id} />
     </>

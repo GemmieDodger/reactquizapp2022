@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import firebase from "../Firebase";
 
-import styled from "styled-components";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,6 +9,7 @@ import Container from "react-bootstrap/Container";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 import CodeBox from "../components/CodeBox";
+import SubHeader from "../components/SubHeader";
 import ErrorMessage from "../components/ErrorMessage";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
@@ -145,9 +145,7 @@ const Quiz = (props) => {
                     </>
                   ) : (
                     <>
-                    <QuizName className="text-center">
-                      You are competing the {quiz.quizName} quiz
-                    </QuizName>
+                    <SubHeader quizName={quizName} />
                     <ProgressBar animated now={position} className="m-5"/>
 
                     <Row  className="bg-dark text-light p-4 m-5">
@@ -205,7 +203,3 @@ const Quiz = (props) => {
 
 export default Quiz;
 
-const QuizName = styled.h4`
-  textalign: "right";
-  padding: 1em;
-`;

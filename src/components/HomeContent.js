@@ -24,7 +24,7 @@ const HomeContent = (props) => {
     setState({ quizzes });
   };
 
-  //check quizzes exists + set state
+  // Check quizzes exists + set state.
   useEffect(() => {
     const ref = firebase.firestore().collection("quizzes");
     
@@ -66,11 +66,12 @@ const HomeContent = (props) => {
             </Card>
           </Link>
         )}
-
-        {state.quizzes.map((quiz) => (
+        {state.quizzes.length > 0 &&
+        state.quizzes.map((quiz) => (
           <Col key={quiz.id} xs={12} md={4}>
             <div key={quiz.key} data-label="quiz">
               <Link
+                key={quiz.id}
                 className="text-decoration-none text-"
                 to={{ pathname: `/quiz/${quiz.key}/${quiz.quizName}` }}
               >
@@ -89,6 +90,7 @@ const HomeContent = (props) => {
             </div>
           </Col>
         ))}
+        }
       </Row>
     </Container>
   );

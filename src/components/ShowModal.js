@@ -21,23 +21,24 @@ const ShowModal = (props) => {
       statement = "You deleted a question";
       break;
     default:
-      statement = "You have performed an action. I'm a little confused at what the action was!";
+      statement =
+        "You have performed an action. I'm a little confused at what the action was!";
   }
-    return (
-      <>
-        <Modal show={show} onHide={props.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{statement}</Modal.Title>
-          </Modal.Header>
+  return (
+    <>
+      <Modal show={show} onHide={props.handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{statement}</Modal.Title>
+        </Modal.Header>
 
-          <Modal.Footer>
-            <Button variant="secondary" onClick={props.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
+        <Modal.Footer>
+          <Button variant="secondary" onClick={props.handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 };
 
 export default ShowModal;

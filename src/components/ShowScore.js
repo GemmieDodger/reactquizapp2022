@@ -20,9 +20,10 @@ const ShowScore = (props) => {
           </Link>
         </Row>
       </div>
-      {props.incorrectQuestions ? (
+      {props.incorrectQuestions.length > 0 && (
       <>
       <Row className="bg-dark text-light p-4 m-5">
+      
         <h3>Incorrect answers </h3>
           {props.incorrectQuestions.map((question, index) => (
             <>
@@ -51,8 +52,9 @@ const ShowScore = (props) => {
               </Row>
               </>
           ))}
+        }
         </Row>
-        </> ) : ''}
+        </> )}
     </>
   );
 };

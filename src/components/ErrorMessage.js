@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const ErrorMessage = (props) => {
-  var statement = "";
+  let statement = "";
   switch (props.type) {
     case "questions":
       statement = "There appear to be no questions set for this quiz.";

@@ -160,9 +160,8 @@ const EditQuestions = (props) => {
               {questions.map((question, index) => (
                 <>
                   <Row
-                    className="mb-4 mt-4"
+                    className="mb-4 mt-4 editQuestion"
                     test-id="editQuestion"
-                    class="editQuestion"
                     key={index}
                   >
                     <Col>
@@ -174,7 +173,7 @@ const EditQuestions = (props) => {
                       <Form.Group className="mb-3" controlId="questionText">
                         <Form.Control
                           as="textarea"
-                          class="questionText"
+                          className="questionText"
                           key={index}
                           rows={2}
                           placeholder={questions[index].questionText}

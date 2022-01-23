@@ -13,7 +13,7 @@ const Home = () => {
     return (
       <div className="App">
         <Header user={user} logout={logout} />
-        <Link className="text-decoration-none text-info" to={{ pathname:"/admin", passedProps:{user: user}}}>
+        <Link className="text-decoration-none text-info" to={{ pathname:"/admin"}}>
               <Card
                   style={{ maxHeight: 100 }}
                   className="bg-secondary d-flex  m-0 p-0 text-light xs={1} md={2}"

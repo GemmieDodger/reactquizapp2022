@@ -11,21 +11,22 @@ import firebase from "../Firebase";
 import { StyledFirebaseAuth } from "react-firebaseui";
 
 const Login = (props) => {
-
   return (
     <div>
-    <Header />
-    
+      <Header />
       <Container fluid className="text-white p-5" data-testid="login">
-        
         <Row>
-            <Col>
-            <StyledFirebaseAuth style="p-2" uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
-            </Col>
+          <Col>
+            <StyledFirebaseAuth
+              style="p-2"
+              uiConfig={uiConfig}
+              firebaseAuth={firebase.auth()}
+            />
+          </Col>
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
 export default Login;

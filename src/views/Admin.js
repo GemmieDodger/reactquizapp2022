@@ -34,7 +34,7 @@ const Admin = (props) => {
   //check quizzes exists + set state
   useEffect(() => {
     const ref = firebase.firestore().collection("quizzes");
-    // console.log(ref.doc());
+
     ref.get().then((doc) => {
       if (!doc.exists) {
         console.log("No such document!");
@@ -51,10 +51,7 @@ const Admin = (props) => {
         <div>
           <Link
             className="text-decoration-none"
-            to={{
-              pathname: `/admin/create`,
-              passedProps: { user: user },
-            }}
+            to={{pathname: `/admin/create`}}
           >
             <Card
               style={{ height: 250 }}
@@ -100,7 +97,7 @@ const Admin = (props) => {
                     className="text-decoration-none"
                     to={{
                       pathname: `/admin/edit/quiz/${quiz.key}/${quiz.quizName}`,
-                      passedProps: { user: user },
+                      passedProps: { quizName: quiz.quizName },
                     }}
                   >
                     <Card
